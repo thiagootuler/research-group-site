@@ -1,0 +1,58 @@
+body{
+  font: 13px/1.65em "open sans","HelveticaNeue","Helvetica Neue","Helvetica-Neue",Helvetica,Arial,sans-serif;
+}
+
+#menu-principal{
+  background-color: rgba(214,218,218,0.9);
+}
+
+#menu-principal a.nav-link{
+  border-bottom: 2px solid transparent !important;
+}
+
+#menu-principal a.nav-link:active,
+#menu-principal a.nav-link:hover{
+  color: #fff !important;
+  border-bottom: 2px solid #3085aa !important;
+}
+
+main h1, main h1>a, main h1>a:active, main h1>a:hover,
+main h2, main h2>a, main h2>a:active, main h2>a:hover,
+main h3, main h3>a, main h3>a:active, main h3>a:hover,
+main h4, main h4>a, main h4>a:active, main h4>a:hover,
+main h5, main h5>a, main h5>a:active, main h5>a:hover,
+main h6, main h6>a, main h6>a:active, main h6>a:hover{
+  font-weight: inherit;
+  color: #212529;
+}
+
+main p,
+main ul{
+  color: #666;
+}
+
+main strong,
+main em,
+main a{
+  font-weight: bold;
+  color: #2d5c88;
+}
+
+footer{
+  background-color: #132937;
+  color: #ddd;
+}
+
+footer #menu-rodape{
+  background-color: #60727B;
+}
+
+footer #menu-rodape a.nav-link:active,
+footer #menu-rodape a.nav-link:hover{
+  text-decoration: underline !important;
+}
+
+#perfil img{
+  width: 250px;
+  height: 250px;
+}
