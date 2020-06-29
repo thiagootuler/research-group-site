@@ -1,7 +1,7 @@
 ## Site para grupo de pesquisas acadêmicas
 Este projeto tem como objetivo a criação de um canal para divulgação de pesquisas de grupos e laboratórios da Universidade Federal do Espírito Santo.
 
-## Funcionamento
+### Funcionamento
 
 Esse template está dividido nas seguintes páginas:
 
@@ -10,6 +10,6 @@ Esse template está dividido nas seguintes páginas:
 * Membros: Lista dos membros da equipe e links para seus respectivos curriculos Lattes;
 * Contato: página com contato e endereço do grupo.
 
-## Uso
+### Uso
 
 Este projeto está sob a licença MIT, e poderá ser utilizado como base para criação de sites para outros grupos de pesquisa.
