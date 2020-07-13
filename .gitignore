@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Project settings
+.project
+.idea
+
+# local packages and files
+.commands*
+
