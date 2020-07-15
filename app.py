@@ -12,7 +12,19 @@ def publicacoes():
 
 @app.route("/artigo")
 def artigo():
-    return render_template('artigo.html')
+    artigo = {
+        'titulo': "Titulo do artigo",
+        'autores': ["Nome do Autor 1", "Nome do Autor 2"],
+        'capa': "http://placehold.it/400x200?text=Graphical+Abstract",
+        'resumo': "Atque unde sint velit, omnis iusto sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ratione fuga. Corporis, provident, cum eligendi atque aliquam non saepe laudantium odit soluta nostrum labore, voluptas fuga sit laboriosam veniam eos? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore beatae, ut dolorum ipsum consequatur eveniet accusantium, in repellendus repudiandae assumenda animi voluptas quibusdam cumque ad architecto. Fugiat laboriosam eos quas!",
+        'citacoes': {
+            'BibTeX': '@ARTICLE{nome, AUTHOR = {Nome do Autor},TITLE = {Titulo do artigo},PUBLISHER = {Revista},YEAR = {2020} }',
+            'EndNote': '_'
+        },
+        'classificacao': 0.0,
+        'doi': "http://dx.doi.org/..."
+    }
+    return render_template('artigo.html', conteudo=artigo)
 
 @app.route("/membros")
 def membros():
