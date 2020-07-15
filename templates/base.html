@@ -4,8 +4,8 @@
     <title>NOME</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="main.js"></script>
 </head>
@@ -13,7 +13,7 @@
     <nav id="menu-principal" class="navbar navbar-expand-lg navbar-light py-0 sticky-top text-capitalize font-weight-bold">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="../static/images/logo.png">
+                <img src="{{ url_for('static', filename='images/logo.png') }}">
             </a>
             <a class="navbar-toggler" data-toggle="collapse" data-target="#menu-principal-itens" href="">
                 <i class="navbar-toggler-icon"></i>
@@ -29,7 +29,7 @@
         </div>
     </nav>
     <header class="card border-0">
-        <img class="card-img" src="../static/images/banner.png" alt="banner">
+        <img class="card-img" src="{{ url_for('static', filename='images/banner.png') }}" alt="banner">
         <div class="card-img-overlay sr-only">
             <h1 class="display-4 text-white"><strong>NOME</strong> Research Group</h1>
         </div>
@@ -59,7 +59,7 @@
                         <input class="form-control mr-2 btn btn-outline-secondary" type="submit" value="Pesquisar">
                     </form>
                     <a href="http://www.ufes.br/" class="my-2" target="_blank">
-                        <img class="img-fluid d-block py-4" src="../static/images/logo-branco.png">
+                        <img class="img-fluid d-block py-4" src="{{ url_for('static', filename='images/logo-branco.png') }}">
                     </a>
                 </div>
             </div>
@@ -78,6 +78,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
