@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block conteudo %}        
+    <h2 class="text-center">{{ titulo }}</h2>
+    <div class="row pt-5">
+        {% for membro in conteudo %}
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div id="perfil" class="card mb-4">
+                    <img src="{{ url_for('static', filename='images/' + membro.foto)  }}" alt="perfil" class="card-img-top align-self-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><a href="{{ membro.lattes }}" target="_blank">{{ membro.nome }}</a></h2>
+                        <h6 class="card-subtitle mb-3">{{ membro.nivel }}</h3>
+                        <p class="card-text text-justify">{{ membro.resumo }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

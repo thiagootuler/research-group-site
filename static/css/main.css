@@ -52,7 +52,7 @@ footer #menu-rodape a.nav-link:hover{
   text-decoration: underline !important;
 }
 
-#perfil img{
+.perfil img{
   width: 250px;
   height: 250px;
 }

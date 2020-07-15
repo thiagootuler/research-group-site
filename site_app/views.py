@@ -1,16 +1,18 @@
 from django.shortcuts import render
+from site_app.models import apresentacao, artigo, membro, contato
 
-def index(request):
-  return render(request, 'index.html')
 
-def publicacoes(request):
-  return render(request, 'publicacoes.html')
+def index(request, apresentacao=apresentacao):
+    return render(request, 'index.html', {'conteudo': apresentacao})
 
-def artigo(request):
-    return render(request, 'artigo.html')
+def publicacoes(request, publicacoes=[artigo] * 3):
+    return render(request, 'publicacoes.html', {'titulo': "Publicações", 'conteudo': publicacoes})
 
-def membros(request):
-  return render(request, 'membros.html')
+def artigo(request, artigo=artigo):
+    return render(request, 'artigo.html', {'conteudo': artigo})
 
-def contato(request):
-  return render(request, 'contato.html')
+def membros(request, membros=[membro for i in range(7)]):
+    return render(request, 'membros.html', {'titulo':"Equipe de pesquisadores", 'conteudo': membros})
+
+def contato(request, contato=contato):
+    return render(request, 'contato.html', {'titulo': "Formas de contato", 'conteudo': contato})
