@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block conteudo %}
-    <h2 class="text-center">Formas de contato</h2>
+    <h2 class="text-center">{{ titulo }}</h2>
     <div class="row pt-5">
         <div class="col-md-5">
             <h4>
@@ -8,29 +8,31 @@
                 Endereço
             </h4>
             <p>
-                NOME Research Group <br>
-                Universidade Federal do Espírito Santo (UFES) - Campus de Alegre <br>
-                Departamento de Ciências Florestais e da Madeira (DCFM) <br>
-                <a href="geo:-20.7898091,-41.3897484,19" rel="Localização" target="_blank">Av. Gov. Lindenberg, 316 - Centro, Jerônimo Monteiro/ES</a> <br>
-                CEP 29.550-000
+                {% set nome, instituicao, departamento, logradouro, cep, coordenadas = conteudo.endereco %}
+                {{ nome }} <br>
+                {{ instituicao }} <br>
+                {{ departamento }} <br>
+                {% set coordenadas = coordenadas|join(',') %}
+                <a href="geo:{{ coordenadas }}" rel="Localização" target="_blank">{{ logradouro }}</a> <br>
+                CEP {{ cep }}
             </p>
             <h4>
                 <i class="fas fa-phone-square"></i>
                 Telefone
             </h4>
             <p>
-                <a href="tel:" rel="Telefone" target="_blank">(00) 0000-0000</a>
+                <a href="tel:{{ conteudo.telefone }}" rel="Telefone" target="_blank">{{ conteudo.telefone }}</a>
             </p>
             <h4>
                 <i class="fas fa-envelope"></i>
                 E-mail
             </h4>
             <p>
-                <a href="mailto:" rel="E-mail" target="_blank">contato@nome.org.br</a>
+                <a href="mailto:{{ conteudo.email }}" rel="E-mail" target="_blank">{{ conteudo.email }}</a>
             </p>
         </div>
         <div class="col-md-7">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1865.0067791136726!2d-41.38998983161366!3d-20.790739381509162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbbe71d08ccb731%3A0x43f2a4d6bcdc9cb3!2sDepartamento+de+Ci%C3%AAncias+Florestais+e+da+Madeira+-+CCAE%2FUFES!5e0!3m2!1spt-BR!2sbr!4v1556632159367!5m2!1spt-BR!2sbr" class="w-100 h-100" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src={{ conteudo.mapa }} class="w-100 h-100" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
 {% endblock %}

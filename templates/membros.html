@@ -1,23 +1,18 @@
 {% extends "base.html" %}
 {% block conteudo %}        
-    <h2 class="text-center">Equipe de pesquisadores</h2>
+    <h2 class="text-center">{{ titulo }}</h2>
     <div class="row pt-5">
-        <div class="col-xl-3 col-lg-4 col-md-6">
-            <div id="perfil" class="card mb-4">
-                <img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center">
-                <div class="card-body text-center">
-                    <h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2>
-                    <h6 class="card-subtitle mb-3">Doutorando</h3>
-                    <p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p>
+        {% for membro in conteudo %}
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div id="perfil" class="card mb-4">
+                    <img src="{{ membro.foto }}" alt="perfil" class="card-img-top align-self-center">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><a href="{{ membro.lattes }}" target="_blank">{{ membro.nome }}</a></h2>
+                        <h6 class="card-subtitle mb-3">{{ membro.nivel }}</h3>
+                        <p class="card-text text-justify">{{ membro.resumo }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
-        <div class="col-xl-3 col-lg-4 col-md-6"><div id="perfil" class="card mb-4"><img src="{{ url_for('static', filename='images/perfil.png') }}" alt="perfil" class="card-img-top align-self-center"><div class="card-body text-center"><h4 class="card-title"><a href="http://lattes.cnpq.br/" target="_blank">Fulano de Tal</a></h2><h6 class="card-subtitle mb-3">Doutorando</h3><p class="card-text text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente.</p></div></div></div>
+        {% endfor %}
     </div>
 {% endblock %}
