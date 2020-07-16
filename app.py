@@ -16,7 +16,7 @@ def artigo(artigo=artigo):
     return render_template('artigo.html', conteudo=artigo)
 
 @app.route("/membros")
-def membros(membros=[membro for i in range(4)]):
+def membros(membros=[membro for i in range(7)]):
     return render_template('membros.html', titulo="Equipe de pesquisadores", conteudo=membros)
 
 @app.route("/contato")
