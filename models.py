@@ -1,3 +1,76 @@
+class Artigo:
+    def __init__(self, titulo, autores, capa, miniatura, resumo, citacoes, qualis, doi):
+        self._titulo = titulo
+        self._autores = autores
+        self._capa = capa
+        self._miniatura = miniatura
+        self._resumo = resumo
+        self._citacoes = citacoes
+        self._qualis = qualis
+        self._doi = doi
+
+    @property
+    def titulo(self):
+        return self._titulo
+
+    @property
+    def autores(self):
+        return self._autores
+
+    @property
+    def capa(self):
+        return self._capa
+
+    @property
+    def miniatura(self):
+        return self._miniatura
+
+    @property
+    def resumo(self):
+        return self._resumo
+
+    @property
+    def citacoes(self):
+        return self._citacoes
+
+    @property
+    def qualis(self):
+        return self._qualis
+
+    @property
+    def doi(self):
+        return self._doi
+
+
+class Membro:
+    def __init__(self, nome, foto, lattes, nivel, resumo):
+        self._nome = nome
+        self._foto = foto
+        self._lattes = lattes
+        self._nivel = nivel
+        self._resumo = resumo
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @property
+    def foto(self):
+        return self._foto
+
+    @property
+    def lattes(self):
+        return self._lattes
+
+    @property
+    def nivel(self):
+        return self._nivel
+
+    @property
+    def resumo(self):
+        return self._resumo
+
+
 class CarregaDados():
     def __init__(self):
         self.apresentacao = """
@@ -12,27 +85,27 @@ class CarregaDados():
             <li>Rem aliquam neque sapiente error voluptates debitis temporibus ducimus.</li>
         </ul>
         """
-        self.artigo = {
-            'titulo': "Titulo do artigo",
-            'autores': ["Nome do Autor 1", "Nome do Autor 2"],
-            'capa': "http://placehold.it/400x200?text=Graphical+Abstract",
-            'miniatura': "http://placehold.it/85",
-            'resumo': "Atque unde sint velit, omnis iusto sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ratione fuga. Corporis, provident, cum eligendi atque aliquam non saepe laudantium odit soluta nostrum labore, voluptas fuga sit laboriosam veniam eos? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore beatae, ut dolorum ipsum consequatur eveniet accusantium, in repellendus repudiandae assumenda animi voluptas quibusdam cumque ad architecto. Fugiat laboriosam eos quas!",
-            'citacoes': {
+        self.artigo = Artigo(
+            titulo="Titulo do artigo",
+            autores=["Nome do Autor 1", "Nome do Autor 2"],
+            capa="http://placehold.it/400x200?text=Graphical+Abstract",
+            miniatura="http://placehold.it/85",
+            resumo="Atque unde sint velit, omnis iusto sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ratione fuga. Corporis, provident, cum eligendi atque aliquam non saepe laudantium odit soluta nostrum labore, voluptas fuga sit laboriosam veniam eos? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore beatae, ut dolorum ipsum consequatur eveniet accusantium, in repellendus repudiandae assumenda animi voluptas quibusdam cumque ad architecto. Fugiat laboriosam eos quas!",
+            citacoes={
                 'BibTeX': '@ARTICLE{nome, AUTHOR = {Nome do Autor},TITLE = {Titulo do artigo},PUBLISHER = {Revista},YEAR = {2020} }',
                 'EndNote': '_'
             },
-            'classificacao': 0.0,
-            'doi': "http://dx.doi.org/..."
-        }
+            qualis=0.0,
+            doi="http://dx.doi.org/..."
+        )
         self.publicacoes = [self.artigo] * 2
-        membro = {
-            'foto': "perfil.png",
-            'lattes': "http://lattes.cnpq.br/",
-            'nome': "Fulano de Tal",
-            'nivel': "Doutorando",
-            'resumo': "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente."
-        }
+        membro = Membro(
+            foto="perfil.png",
+            lattes="http://lattes.cnpq.br/",
+            nome="Fulano de Tal",
+            nivel="Doutorando",
+            resumo="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam consequatur autem rerum nam quaerat placeat cupiditate, atque enim expedita obcaecati, quae fugit tempora illum facilis neque id laboriosam, dolores sapiente."
+        )
         self.membros = [membro for i in range(7)]
         self.contato = {
             'endereco': [
