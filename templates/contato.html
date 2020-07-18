@@ -8,13 +8,11 @@
                 Endereço
             </h4>
             <p>
-                {% set nome, instituicao, departamento, logradouro, cep, coordenadas = conteudo.endereco %}
-                {{ nome }} <br>
-                {{ instituicao }} <br>
-                {{ departamento }} <br>
-                {% set coordenadas = coordenadas|join(',') %}
-                <a href="geo:{{ coordenadas }}" rel="Localização" target="_blank">{{ logradouro }}</a> <br>
-                CEP {{ cep }}
+                {{ conteudo.endereco.nome }} <br>
+                {{ conteudo.endereco.instituicao }} <br>
+                {{ conteudo.endereco.departamento }} <br>
+                <a href="geo:{{ conteudo.endereco.coordenadas }}" rel="Localização" target="_blank">{{ conteudo.endereco.localizacao }}</a> <br>
+                CEP {{ conteudo.endereco.cep }}
             </p>
             <h4>
                 <i class="fas fa-phone-square"></i>
