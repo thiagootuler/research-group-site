@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 {% load static %}
-{% with grupo=footer_contact.endereco.0 instituicao=footer_contact.endereco.1 departamento=footer_contact.endereco.2 localizacao=footer_contact.endereco.3 cep=footer_contact.endereco.4 coordenadas=footer_contact.endereco.5 %}
 <head>
-    <title>{{ grupo }}</title>
+    <title>{{ footer_contact.endereco.grupo }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" type="text/css" media="screen">
@@ -45,10 +44,10 @@
                 <div class="col-md-6" id="contact">
                     <h6 class="text-secondary text-uppercase">Contate-nos</h6>
                     <p>
-                        {{ grupo }} <br>
-                        {{ instituicao }} <br>
-                        {{ departamento }} <br>
-                        {{ localizacao }} <br>
+                        {{ footer_contact.endereco.grupo }} <br>
+                        {{ footer_contact.endereco.instituicao }} <br>
+                        {{ footer_contact.endereco.departamento }} <br>
+                        {{ footer_contact.endereco.localizacao }} <br>
                         Fone: {{ footer_contact.telefone }} <br>
                         Email: {{ footer_contact.email }} <br>
                     </p>
@@ -68,7 +67,7 @@
         </div>
         <nav id="menu-rodape" class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <span class="navbar-text">Copyright &copy; {{ now.year }} - {{ grupo }}.</span>
+                <span class="navbar-text">Copyright &copy; {{ now.year }} - {{ footer_contact.endereco.grupo }}.</span>
                 <ul class="navbar-nav d-none d-md-flex">
                     <li class="nav-item"><a  class="nav-link" href="{% url 'index' %}">Início</a></li>
                     <li class="nav-item"><a  class="nav-link" href="{% url 'publicacoes' %}">Publicações</a></li>
@@ -82,5 +81,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="{% static '/js/bootstrap.min.js' %}"></script>
 </body>
-{% endwith %}
 </html>

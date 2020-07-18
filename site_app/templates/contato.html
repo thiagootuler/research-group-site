@@ -7,15 +7,13 @@
                 <i class="fas fa-map-marker-alt"></i>
                 Endereço
             </h4>
-            {% with grupo=conteudo.endereco.0 instituicao=conteudo.endereco.1 departamento=conteudo.endereco.2 localizacao=conteudo.endereco.3 cep=conteudo.endereco.4 coordenadas=conteudo.endereco.5 %}
             <p>
-                {{ grupo }} <br>
-                {{ instituicao }} <br>
-                {{ departamento }} <br>
-                <a href="geo:{{ coordenadas|join:',' }}" rel="Localização" target="_blank">{{ localizacao }}</a> <br>
-                CEP {{ cep }}
+                {{ conteudo.endereco.grupo }} <br>
+                {{ conteudo.endereco.instituicao }} <br>
+                {{ conteudo.endereco.departamento }} <br>
+                <a href="geo:{{ conteudo.endereco.coordenada }}" rel="Localização" target="_blank">{{ conteudo.endereco.localizacao }}</a> <br>
+                CEP {{ conteudo.endereco.cep }}
             </p>
-            {% endwith %}
             <h4>
                 <i class="fas fa-phone-square"></i>
                 Telefone
