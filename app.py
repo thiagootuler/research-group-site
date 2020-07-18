@@ -1,7 +1,16 @@
 from flask import Flask, render_template, url_for
 from models import apresentacao, artigo, membro, contato
+from datetime import datetime
 
 app = Flask(__name__)
+
+@app.context_processor
+def inject_variables(contato=contato):
+    return dict(
+        header_title="<strong>NOME</strong> Research Group",
+        footer_contact=contato,
+        now=datetime.utcnow()
+    )
 
 @app.route("/")
 def index(apresentacao=apresentacao):

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+{% set nome, instituicao, departamento, logradouro, cep, coordenadas = footer_contact.endereco %}
 <head>
-    <title>NOME</title>
+    <title>{{ nome }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -31,7 +32,7 @@
     <header class="card border-0">
         <img class="card-img" src="{{ url_for('static', filename='images/banner.png') }}" alt="banner">
         <div class="card-img-overlay sr-only">
-            <h1 class="display-4 text-white"><strong>NOME</strong> Research Group</h1>
+            <h1 class="display-4 text-white">{{ header_title|safe  }}</h1>
         </div>
     </header>
     <main class="container py-5">
@@ -43,12 +44,12 @@
                 <div class="col-md-6" id="contact">
                     <h6 class="text-secondary text-uppercase">Contate-nos</h6>
                     <p>
-                        NOME Research Group <br>
-                        Universidade Federal do Espírito Santo (UFES) <br>
-                        Departamento de Ciências Florestais e da Madeira (DCFM) <br>
-                        Av. Gov. Lindenberg, 316 - Centro, Jerônimo Monteiro/ES. <br>
-                        Fone: (00) 0000-0000 <br>
-                        Email: contato@nome.org.br <br>
+                        {{ nome }} <br>
+                        {{ instituicao }} <br>
+                        {{ departamento }} <br>
+                        {{ logradouro }} <br>
+                        Fone: {{ footer_contact.telefone }} <br>
+                        Email: {{ footer_contact.email }} <br>
                     </p>
                 </div>
                 <div class="col-md-4" id="search">
@@ -66,7 +67,7 @@
         </div>
         <nav id="menu-rodape" class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <span class="navbar-text">Copyright &copy; 2019 - NOME Research Group.</span>
+                <span class="navbar-text">Copyright &copy; {{ now.year }} - {{ nome }}.</span>
                 <ul class="navbar-nav d-none d-md-flex">
                     <li class="nav-item"><a  class="nav-link" href="{{ url_for('index') }}">Início</a></li>
                     <li class="nav-item"><a  class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
