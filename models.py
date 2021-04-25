@@ -1,3 +1,4 @@
+
 class Artigo:
     def __init__(self, titulo, autores, capa, miniatura, resumo, citacoes, qualis, doi):
         self._titulo = titulo
@@ -158,7 +159,7 @@ class Contato:
     def mapa(self):
         return self._mapa
 
-
+import os
 class CarregaDados():
     def __init__(self):
         self.apresentacao = """
@@ -188,7 +189,7 @@ class CarregaDados():
         )
         self.publicacoes = [self.artigo] * 2
         membro = Membro(
-            foto="perfil.png",
+            foto=os.path.join('static/images', 'perfil.png'),
             lattes="http://lattes.cnpq.br/",
             nome="Fulano de Tal",
             nivel="Doutorando",

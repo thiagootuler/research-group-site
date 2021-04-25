@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    <h2 class="text-center">{{ titulo }}</h2>
+    <form action="{{ url_for('cadastro_artigo') }}" method="post">
+        <div class="form-group row">
+            <label for="titulo" class="col-sm-1 col-form-label"><h6>Titulo:</h6></label>
+            <div class="col-sm-11">
+                <input class="form-control" id="titulo"  name="titulo" type="text" placeholder="Titulo do Artigo">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="autor" class="col-sm-1 col-form-label"><h6>Autores:</h6></label>
+            <div class="col-sm-11">
+                <input class="form-control" id="autores"  name="autores" type="text" placeholder="Autor Um, Autor Dois, Autor Três">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="resumo" class="col-sm-1 col-form-label"><h6>Resumo:</h6></label>
+            <div class="col-sm-11">
+                <textarea class="form-control" id="resumo"  name="resumo" type="text" placeholder="Descrever o resumo do artigo."></textarea>
+            </div>
+        </div>
+<!--        <div class="form-group row">-->
+<!--            <label for="capa" class="col-sm-1 col-form-label"><h6>Capa:</h6></label>-->
+<!--            <div class="col-sm-5">-->
+<!--                <input type="file" class="form-control-file" id="capa">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="citacao" class="col-sm-1 col-form-label"><h6>Citações:</h6></label>-->
+<!--            <div class="col-sm-11">-->
+<!--                <input class="form-control" id="citacao"  name="citacao" type="text" placeholder="Bibtex">-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="form-group row">
+            <label for="qualis" class="col-sm-1 col-form-label"><h6>Qualis:</h6></label>
+            <div class="col-sm-11">
+                <input class="form-control" id="qualis"  name="qualis" type="text" placeholder="Qualis ou Fator de Impacto">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="doi" class="col-sm-1 col-form-label"><h6>DOI:</h6></label>
+            <div class="col-sm-11">
+                <input class="form-control" id="doi"  name="doi" type="text" placeholder="http://dx.doi.org/...">
+            </div>
+        </div>
+        <div class="form-group row d-flex flex-row-reverse bd-highlight">
+            <input class="mr-3 btn btn-secondary" type="submit" value="Cadastrar">
+            <input class="mr-3 btn btn-secondary" type="reset" value="Limpar">
+        </div>
+    </form>
+{% endblock %}
