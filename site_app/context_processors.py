@@ -1,12 +1,11 @@
-from site_app.models import CarregaDados
+from site_app.models import Contato
 from datetime import datetime
-
-dados = CarregaDados()
 
 
 def inject_variables(request):
+    contato = Contato.objects.all().first()
     return {
         'header_title': "<strong>NOME</strong> Research Group",
-        'footer_contact': dados.contato,
+        'footer_contact': contato,
         'now': datetime.utcnow()
     }

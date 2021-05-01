@@ -6,7 +6,7 @@
             <li class="media my-5 {% if not forloop.last %}pb-4 border-bottom{% else %}pb-0 border-bottom-0{% endif %}">
                 <img class="mr-3" src="{{ artigo.miniatura }}" alt="Generic placeholder image">
                 <div class="media-body text-justify {{ padding }} {{ border }}">
-                    <h5 class="mt-0 mb-1"><a href="{% url 'artigo' %}">{{ artigo.titulo }}</a></h5>
+                    <h5 class="mt-0 mb-1"><a href="{% url 'artigo' artigo.pk %}">{{ artigo.titulo }}</a></h5>
                     <p>
                         {{ artigo.resumo }}
                     </p>

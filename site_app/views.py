@@ -1,24 +1,27 @@
 from django.shortcuts import render
-from site_app.models import CarregaDados
-
-dados = CarregaDados()
+from site_app.models import Apresentacao, Artigo, Membro, Contato
 
 
-def index(request, conteudo=dados.apresentacao):
-    return render(request, 'index.html', {'conteudo': conteudo})
+def index(request):
+    texto = Apresentacao.objects.last()
+    return render(request, 'index.html', {'conteudo': texto})
 
 
-def publicacoes(request, conteudo=dados.publicacoes):
-    return render(request, 'publicacoes.html', {'titulo': "Publicações", 'conteudo': conteudo})
+def publicacoes(request):
+    publicacoes = Artigo.objects.all()
+    return render(request, 'publicacoes.html', {'titulo': "Publicações", 'conteudo': publicacoes})
 
 
-def artigo(request, conteudo=dados.artigo):
-    return render(request, 'artigo.html', {'conteudo': conteudo})
+def artigo(request, pk):
+    artigo = Artigo.objects.get(pk=pk)
+    return render(request, 'artigo.html', {'conteudo': artigo})
 
 
-def membros(request, conteudo=dados.membros):
-    return render(request, 'membros.html', {'titulo': "Equipe de pesquisadores", 'conteudo': conteudo})
+def membros(request):
+    membros = Membro.objects.all()
+    return render(request, 'membros.html', {'titulo': "Equipe de pesquisadores", 'conteudo': membros})
 
 
-def contato(request, conteudo=dados.contato):
-    return render(request, 'contato.html', {'titulo': "Formas de contato", 'conteudo': conteudo})
+def contato(request):
+    contato = Contato.objects.all().first()
+    return render(request, 'contato.html', {'titulo': "Formas de contato", 'conteudo': contato})
